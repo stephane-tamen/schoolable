@@ -13,11 +13,15 @@ namespace Schoolable.Models
         [Required]
         public long Id { get; set; }
         [Required]
+        public string  Code { get; set; }
+        [Required]
         public string Libelle { get; set; }
+
         public DateTime CreatedTimestamp { get; set; }
+
         public DateTime UpdateTimestamp { get; set; }
         public ICollection<Etablissement> Etablissements { get; set; } = new List<Etablissement>();
 
-
+       
     }
 }

@@ -44,13 +44,12 @@ namespace Schoolable.Controllers
         // PUT: api/TypeEtablissements/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTypeEtablissement(long id, TypeEtablissement typeEtablissement)
+        public async Task<ActionResult<TypeEtablissement>> PutTypeEtablissement(long id, TypeEtablissement typeEtablissement)
         {
             if (id != typeEtablissement.Id)
             {
                 return BadRequest();
             }
-
             _context.Entry(typeEtablissement).State = EntityState.Modified;
 
             try
@@ -69,7 +68,8 @@ namespace Schoolable.Controllers
                 }
             }
 
-            return NoContent();
+            //return NoContent();
+            return typeEtablissement;
         }
 
         // POST: api/TypeEtablissements

@@ -22,7 +22,6 @@ namespace Schoolable.Models
         public DateTime CreatedTimestamp { get; set; }
         public DateTime UpdateTimestamp { get; set; }
         public long TypeEtablissementId { get; set; }
-        [Required]
         public TypeEtablissement TypeEtablissement { get; set; }
         public ICollection<Departement> Departements { get; set; } = new List<Departement>();
         public ICollection<Salle> Salles { get; set; } = new List<Salle>();
